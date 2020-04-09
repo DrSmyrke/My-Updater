@@ -12,13 +12,13 @@ namespace app {
 			if(QString(argv[i]).indexOf("-")==0){
 				if(QString(argv[i]) == "--help" or QString(argv[1]) == "-h"){
 					printf("Usage: %s [OPTIONS]\n"
-							"  -l	login\n"
-							"  -v    Verbose output\n"
+							"  -t <PATH>	target dir\n"
+						   "  -r <URL>	repository url\n"
 							"\n", argv[0]);
 					ret = false;
 				}
-				//if(QString(argv[i]) == "-l") app::conf.login = QString(argv[++i]);
-				//if(QString(argv[i]) == "-v") app::conf.verbose = true;
+				if(QString(argv[i]) == "-t") app::conf.targetDir = QString(argv[++i]);
+				if(QString(argv[i]) == "-r") app::conf.repository = QString(argv[++i]);
 			}
 		}
 		return ret;
