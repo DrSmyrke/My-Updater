@@ -4,14 +4,12 @@
 <context>
     <name>ConsoleWidget</name>
     <message>
-        <location filename="../consoleWidget.cpp" line="205"/>
         <source>terminal</source>
-        <translation>терминал</translation>
+        <translation type="vanished">терминал</translation>
     </message>
     <message>
-        <location filename="../consoleWidget.cpp" line="209"/>
         <source>console</source>
-        <translation>консоль</translation>
+        <translation type="vanished">консоль</translation>
     </message>
 </context>
 <context>
@@ -22,76 +20,124 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="25"/>
-        <source>2400</source>
-        <translation type="unfinished"></translation>
+        <location filename="../mainwindow.ui" line="38"/>
+        <source>UPDATE</source>
+        <translation>ОБНОВИТЬ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="30"/>
-        <source>9600</source>
-        <translation type="unfinished"></translation>
+        <source>targetPath</source>
+        <translation type="obsolete">Целевой путь</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="35"/>
-        <source>19200</source>
-        <translation type="unfinished"></translation>
+        <location filename="../mainwindow.ui" line="45"/>
+        <source>&lt;b&gt;Repository:&lt;bl&gt;</source>
+        <translation>&lt;b&gt;Репозиторий:&lt;bl&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="40"/>
-        <source>115200</source>
-        <translation type="unfinished"></translation>
+        <location filename="../mainwindow.ui" line="59"/>
+        <source>Address</source>
+        <translation>Адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="48"/>
+        <location filename="../mainwindow.ui" line="66"/>
+        <source>SELECT</source>
+        <translation>ВЫБРАТЬ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="73"/>
+        <source>&lt;b&gt;Target:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Цель:&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>CLEAR</source>
-        <translation>Очистить</translation>
+        <translation type="vanished">Очистить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="55"/>
         <source>&lt;b&gt;Speed:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Скорость:&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Скорость:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="65"/>
         <source>MODE</source>
-        <translation>РЕЖИМ</translation>
+        <translation type="vanished">РЕЖИМ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="78"/>
         <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Порт:&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Порт:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="85"/>
-        <location filename="../mainwindow.cpp" line="33"/>
-        <location filename="../mainwindow.cpp" line="55"/>
         <source>OPEN</source>
-        <translation>ОТКРЫТЬ</translation>
+        <translation type="vanished">ОТКРЫТЬ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="105"/>
-        <source>HEX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="44"/>
         <source>CLOSE</source>
-        <translation>ЗАКРЫТЬ</translation>
+        <translation type="vanished">ЗАКРЫТЬ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="100"/>
         <source>Mode: %1</source>
-        <translation>Режим: %1</translation>
+        <translation type="vanished">Режим: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
         <source>Console</source>
-        <translation>Консоль</translation>
+        <translation type="vanished">Консоль</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="191"/>
         <source>Terminal</source>
-        <translation>Терминал</translation>
+        <translation type="vanished">Терминал</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="91"/>
+        <source>Updating information from </source>
+        <translation>Обновление информации из </translation>
+    </message>
+    <message>
+        <source>Decrypting information...
+</source>
+        <translation type="obsolete">Расшифровка информации...\n</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="98"/>
+        <source>Decrypting information...</source>
+        <translation>Расшифровка информации...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="103"/>
+        <source>Checking filesystem...</source>
+        <translation>Проверка файловой системы...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="108"/>
+        <source>Download updates...</source>
+        <translation>Загрузка обновлений...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="52"/>
+        <location filename="../mainwindow.cpp" line="127"/>
+        <source>Target directory</source>
+        <translation>Целевой каталог</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="183"/>
+        <source>Checking files [%1/%2] ...</source>
+        <translation>Проверка файлов [%1/%2] ...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="263"/>
+        <source>Target dir not found</source>
+        <translation>Целевой каталог не найден</translation>
+    </message>
+    <message>
+        <source>Open Target Directory</source>
+        <translation type="obsolete">Открыть каталог назначения</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="238"/>
+        <source>   Files left: %1      </source>
+        <translation>   Файлов осталось: %1      </translation>
+    </message>
+    <message>
+        <source>Target dir not found
+</source>
+        <translation type="obsolete">Каталог назнечения не найден</translation>
     </message>
 </context>
 </TS>

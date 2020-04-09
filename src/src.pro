@@ -48,7 +48,8 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
-TRANSLATIONS = lang/ru_RU.ts
+TRANSLATIONS += \
+    lang/ru_RU.ts
 
 exists(./gitversion.pri):include(./gitversion.pri)
 exists(./myLibs.pri):include(./myLibs.pri)

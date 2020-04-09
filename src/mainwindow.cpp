@@ -95,17 +95,17 @@ void MainWindow::slot_run()
 		break;
 		case State::decryptingList:
 			ui->progressBar->setValue( 40 );
-			ui->logBox->insertPlainText( tr( "Decrypting information...\n" ) );
+			ui->logBox->insertPlainText( tr( "Decrypting information..." ) + "\n" );
 			decryptList();
 		break;
 		case State::checkingFS:
 			ui->progressBar->setValue( 60 );
-			ui->logBox->insertPlainText( tr( "Checking filesystem...\n" ) );
+			ui->logBox->insertPlainText( tr( "Checking filesystem..." ) + "\n" );
 			checkingFileSystem();
 		break;
 		case State::downloadUpdates:
 			ui->progressBar->setValue( 80 );
-			ui->logBox->insertPlainText( tr( "Download updates...\n" ) );
+			ui->logBox->insertPlainText( tr( "Download updates..." ) + "\n" );
 			downloadUpdates();
 		break;
 		case State::finished:
@@ -124,7 +124,7 @@ void MainWindow::slot_run()
 
 void MainWindow::slot_selectTarget()
 {
-	auto target = QFileDialog::getExistingDirectory(this, tr("Open Target Directory"),
+	auto target = QFileDialog::getExistingDirectory(this, tr("Target directory"),
 													app::conf.targetDir,
 													QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	ui->targetBox->setText( target );
@@ -180,7 +180,7 @@ void MainWindow::checkingFileSystem()
 			QDir().mkpath( targetDir );
 		}
 
-		auto str = QString( tr("Checking files [%1/%2] ...\n") ).arg( i ).arg( totalFiles );
+		auto str = QString( tr("Checking files [%1/%2] ...") + "\n" ).arg( i ).arg( totalFiles );
 		ui->statusL->setText( str );
 		i++;
 
@@ -260,7 +260,7 @@ void MainWindow::slot_update()
 		QDir().mkpath( app::conf.targetDir );
 	}
 	if( !QDir( app::conf.targetDir ).exists() ){
-		ui->logBox->insertPlainText( tr( "Target dir not found\n" ) );
+		ui->logBox->insertPlainText( tr( "Target dir not found" ) + "\n" );
 		return;
 	}
 
