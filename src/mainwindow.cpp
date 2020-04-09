@@ -33,8 +33,9 @@ MainWindow::MainWindow(QWidget *parent) :
 	m_working = false;
 	m_updatingF = false;
 	ui->progressBar->setValue( 0 );
-	ui->progressBar->setTextVisible( true );
+	//TODO: remove?
 	m_applicationPath = QCoreApplication::applicationDirPath();
+	ui->statusL->setText( " " );
 }
 
 MainWindow::~MainWindow()
@@ -45,7 +46,7 @@ MainWindow::~MainWindow()
 void MainWindow::slot_downloadProgress(const qint64 bytesReceived, const qint64 bytesTotal)
 {
 	auto str = QString( "   Downloading [%1/%2]...\n" ).arg( mf::getSize( (uint64_t)bytesReceived ) ).arg( mf::getSize( (uint64_t)bytesTotal ) );
-	ui->progressBar->setFormat( str );
+	ui->statusL->setText( str );
 }
 
 void MainWindow::slot_readyRead()
@@ -80,10 +81,11 @@ void MainWindow::slot_run()
 	if( m_working ) return;
 
 	auto assetsListFile = QString( "http://%1/assets.list" ).arg( app::conf.repository );
-	ui->progressBar->setFormat( "" );
+	ui->statusL->setText( " " );
 
 	switch( m_state++ ){
 		case State::downloadList:
+			ui->progressBar->setValue( 20 );
 			m_updatingF = false;
 			m_downloadList.clear();
 			ui->logBox->insertPlainText( tr( "Updating information from " ) );
@@ -92,18 +94,22 @@ void MainWindow::slot_run()
 			startDownload( QUrl( assetsListFile ), "" );
 		break;
 		case State::decryptingList:
+			ui->progressBar->setValue( 40 );
 			ui->logBox->insertPlainText( tr( "Decrypting information...\n" ) );
 			decryptList();
 		break;
 		case State::checkingFS:
+			ui->progressBar->setValue( 60 );
 			ui->logBox->insertPlainText( tr( "Checking filesystem...\n" ) );
 			checkingFileSystem();
 		break;
 		case State::downloadUpdates:
+			ui->progressBar->setValue( 80 );
 			ui->logBox->insertPlainText( tr( "Download updates...\n" ) );
 			downloadUpdates();
 		break;
 		case State::finished:
+			ui->progressBar->setValue( 100 );
 			if( m_pTimer->isActive() ){
 				m_pTimer->start();
 			}
@@ -175,7 +181,7 @@ void MainWindow::checkingFileSystem()
 		}
 
 		auto str = QString( tr("Checking files [%1/%2] ...\n") ).arg( i ).arg( totalFiles );
-		ui->progressBar->setFormat( str );
+		ui->statusL->setText( str );
 		i++;
 
 		if( mf::checkFile( targetFile ) ){

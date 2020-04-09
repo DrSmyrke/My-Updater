@@ -16,9 +16,16 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="2" column="0" colspan="3">
-     <widget class="QPlainTextEdit" name="logBox"/>
+     <widget class="QPlainTextEdit" name="logBox">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
-    <item row="3" column="0" colspan="4">
+    <item row="4" column="0" colspan="4">
      <widget class="QProgressBar" name="progressBar">
       <property name="value">
        <number>24</number>
@@ -36,13 +43,6 @@
      <widget class="QLabel" name="label">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Repository:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>&lt;b&gt;Target:&lt;/b&gt;</string>
       </property>
      </widget>
     </item>
@@ -64,6 +64,20 @@
      <widget class="QPushButton" name="targetSB">
       <property name="text">
        <string>SELECT</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>&lt;b&gt;Target:&lt;/b&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="4">
+     <widget class="QLabel" name="statusL">
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>
