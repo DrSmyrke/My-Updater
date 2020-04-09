@@ -2,3 +2,5 @@ build
 bin
 build-*
 *.pro.user
+myfunctions.cpp
+myfunctions.h
