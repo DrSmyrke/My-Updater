@@ -20,31 +20,41 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="38"/>
+        <location filename="../mainwindow.ui" line="21"/>
+        <source>&lt;b&gt;Key:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Ключ:&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="35"/>
         <source>UPDATE</source>
         <translation>ОБНОВИТЬ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="97"/>
+        <source>Key</source>
+        <translation>Ключ</translation>
     </message>
     <message>
         <source>targetPath</source>
         <translation type="obsolete">Целевой путь</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="45"/>
+        <location filename="../mainwindow.ui" line="52"/>
         <source>&lt;b&gt;Repository:&lt;bl&gt;</source>
         <translation>&lt;b&gt;Репозиторий:&lt;bl&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="59"/>
+        <location filename="../mainwindow.ui" line="87"/>
         <source>Address</source>
         <translation>Адрес</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="66"/>
+        <location filename="../mainwindow.ui" line="73"/>
         <source>SELECT</source>
         <translation>ВЫБРАТЬ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="73"/>
+        <location filename="../mainwindow.ui" line="59"/>
         <source>&lt;b&gt;Target:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Цель:&lt;/b&gt;</translation>
     </message>
@@ -110,7 +120,7 @@
         <translation>Загрузка обновлений...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="52"/>
+        <location filename="../mainwindow.ui" line="80"/>
         <location filename="../mainwindow.cpp" line="127"/>
         <source>Target directory</source>
         <translation>Целевой каталог</translation>
@@ -121,7 +131,7 @@
         <translation>Проверка файлов [%1/%2] ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="264"/>
         <source>Target dir not found</source>
         <translation>Целевой каталог не найден</translation>
     </message>

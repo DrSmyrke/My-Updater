@@ -151,8 +151,8 @@ void MainWindow::decryptList()
 {
 	m_working = true;
 	m_updateList.clear();
-	mf::XOR( m_buff, "magic_key" );
-	m_updateList = QString( m_buff ).split( "\n" );
+	mf::XOR( m_buff, app::conf.key.toUtf8() );
+	m_updateList = QString( QByteArray::fromBase64( m_buff ) ).split( "\n" );
 	m_working = false;
 }
 
@@ -252,7 +252,8 @@ void MainWindow::slot_update()
 {
 	auto repo = ui->addressBox->text();
 	auto target = ui->targetBox->text();
-	if( repo.isEmpty() && target.isEmpty() ){
+	auto key = ui->keyBox->text();
+	if( repo.isEmpty() || target.isEmpty() || key.isEmpty() ){
 		return;
 	}
 
@@ -266,6 +267,7 @@ void MainWindow::slot_update()
 
 	app::conf.repository = repo;
 	app::conf.targetDir = target;
+	app::conf.key = key;
 	m_pTimer->start();
 }
 

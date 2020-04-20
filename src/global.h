@@ -7,6 +7,7 @@ struct Config{
 	QString version;
 	QString repository;
 	QString targetDir;
+	QString key;
 };
 
 namespace app {
