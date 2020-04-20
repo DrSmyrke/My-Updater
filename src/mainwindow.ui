@@ -98,6 +98,13 @@
       </property>
      </widget>
     </item>
+    <item row="3" column="4">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>&lt;a href=&quot;http://drsmyrke.ru&quot;&gt;Dr.Smyrke&lt;/a&gt;</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>

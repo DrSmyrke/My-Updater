@@ -80,7 +80,7 @@ void MainWindow::slot_run()
 {
 	if( m_working ) return;
 
-	auto assetsListFile = QString( "http://%1/assets.list" ).arg( app::conf.repository );
+	auto assetsListFile = QString( "http://%1.list" ).arg( app::conf.repository );
 	ui->statusL->setText( " " );
 
 	switch( m_state++ ){
