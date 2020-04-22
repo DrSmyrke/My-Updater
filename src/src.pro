@@ -6,6 +6,9 @@
 
 QT       += core gui network
 
+#uncomment from static build
+#QMAKE_LFLAGS_RELEASE += -static -static-libgcc
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 #TARGET = MyUpdater
