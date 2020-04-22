@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	ui->addressBox->setText( app::conf.repository );
 	ui->targetBox->setText( app::conf.targetDir );
+	ui->keyBox->setText( app::conf.key );
 
 	connect( ui->updateB, &QPushButton::clicked, this, &MainWindow::slot_update );
 	connect( ui->addressBox, &QLineEdit::returnPressed, this, &MainWindow::slot_update );
@@ -78,10 +79,7 @@ void MainWindow::slot_finished()
 
 void MainWindow::slot_run()
 {
-	if( m_working ) return;
-
-	auto assetsListFile = QString( "http://%1.list" ).arg( app::conf.repository );
-	ui->statusL->setText( " " );
+	if( m_working ) return;	
 
 	switch( m_state++ ){
 		case State::downloadList:
@@ -91,7 +89,7 @@ void MainWindow::slot_run()
 			ui->logBox->insertPlainText( tr( "Updating information from " ) );
 			ui->logBox->insertPlainText( app::conf.repository );
 			ui->logBox->insertPlainText( " ...\n" );
-			startDownload( QUrl( assetsListFile ), "" );
+			startDownload( QUrl( m_repoListFile ), "" );
 		break;
 		case State::decryptingList:
 			ui->progressBar->setValue( 40 );
@@ -113,6 +111,9 @@ void MainWindow::slot_run()
 			if( m_pTimer->isActive() ){
 				m_pTimer->start();
 			}
+			ui->statusL->setText( " " );
+			ui->updateB->setEnabled( true );
+			ui->targetSB->setEnabled( true );
 			//TODO: Maybe?
 			//emit close();
 		break;
@@ -150,6 +151,7 @@ void MainWindow::startDownload(const QUrl &url, const QString &fileName)
 void MainWindow::decryptList()
 {
 	m_working = true;
+	ui->statusL->setText( " " );
 	m_updateList.clear();
 	mf::XOR( m_buff, app::conf.key.toUtf8() );
 	m_updateList = QString( QByteArray::fromBase64( m_buff ) ).split( "\n" );
@@ -159,6 +161,7 @@ void MainWindow::decryptList()
 void MainWindow::checkingFileSystem()
 {
 	m_working = true;
+	ui->statusL->setText( " " );
 
 	int i = 0;
 	int totalFiles = m_updateList.size();
@@ -175,7 +178,7 @@ void MainWindow::checkingFileSystem()
 		QFileInfo fi;
 		fi.setFile( targetFile );
 		auto targetDir = fi.absoluteDir().absolutePath();
-		auto downloadFile = QString( "http://%1/%2" ).arg( app::conf.repository ).arg( remoteFile );
+		auto downloadFile = QString( "%1/%2" ).arg( m_repoURL ).arg( remoteFile );
 		if( !QDir( targetDir ).exists() ){
 			QDir().mkpath( targetDir );
 		}
@@ -204,6 +207,7 @@ void MainWindow::checkingFileSystem()
 		}
 	}
 
+	ui->statusL->setText( " " );
 	m_working = false;
 }
 
@@ -268,67 +272,17 @@ void MainWindow::slot_update()
 	app::conf.repository = repo;
 	app::conf.targetDir = target;
 	app::conf.key = key;
+
+	auto tmp = app::conf.repository.split( " " );
+	if( tmp.size() != 2 ){
+		ui->logBox->insertPlainText( tr( "Repository address invalid\n Example: [http://example.com/repo repoName]" ) + "\n" );
+		return;
+	}
+	m_repoURL = tmp[0];
+	m_repoListFile = QString( "%1/%2.list" ).arg( m_repoURL ).arg( tmp[1] );
+	m_state = State::downloadList;
+	ui->updateB->setEnabled( false );
+	ui->targetSB->setEnabled( false );
+
 	m_pTimer->start();
 }
-
-//void MainWindow::slot_start()
-//{
-//	auto login = ui->loginBox->text();
-//	auto javaPath = ui->javaBox->text();
-
-//	if( login.isEmpty() || javaPath.isEmpty() ){
-//		return;
-//	}
-
-//	app::conf.login = login;
-//	app::conf.javaPath = javaPath;
-//	app::saveSettings();
-
-//	auto appPath = QCoreApplication::applicationDirPath();
-
-//	QStringList args;
-
-//	args.append( "-Dfml.ignoreInvalidMinecraftCertificates=true" );
-//	args.append( "-Xincgc" );
-//	args.append( "-Xmx1024M" );
-//	args.append( "-Xmn128M" );
-//	args.append( QString( "-Djava.library.path=\"%1\\versions\\Forge 1.6.4\\natives\"" ).arg( appPath ) );
-//	args.append( "-cp" );
-
-//	QStringList libs;
-
-//	scanDir( QString( "%1/libraries" ).arg( appPath ), libs );
-//	scanDir( QString( "%1/versions" ).arg( appPath ), libs );
-
-//	args.append( QString( "\"%1\"" ).arg( libs.join(";") ) );
-//	args.append( "net.minecraft.launchwrapper.Launch" );
-//	args.append( "--username" );
-//	args.append( login );
-//	args.append( "--session" );
-//	args.append( "%random%" );
-//	args.append( "--uuid" );
-//	args.append( "\"%random%%random%-%random%-%random%-%random%-%random%%random%\"" );
-//	args.append( "--accessToken" );
-//	args.append( "\"%random%%random%-%random%-%random%-%random%-%random%%random%\"" );
-//	args.append( "--version" );
-//	args.append( "\"Forge 1.6.4\"" );
-//	args.append( "--gameDir" );
-//	args.append( QString( "\"%1\"" ).arg( appPath ) );
-//	args.append( "--assetsDir" );
-//	args.append( QString( "\"%1/assets\"" ).arg( appPath ) );
-//	args.append( "--tweakClass" );
-//	args.append( "cpw.mods.fml.common.launcher.FMLTweaker" );
-
-//	QFile f( "start.bat" );
-//	if( f.open( QIODevice::WriteOnly ) ){
-//		f.write( QString( "\"%1\"" ).arg( javaPath ).toUtf8() );
-//		f.write( " " );
-//		f.write( args.join( " " ).toUtf8() );
-//		f.close();
-//	}
-
-//	QProcess cmd;
-//	cmd.startDetached("cmd",QStringList()<<"/C"<<"start.bat");
-
-//	emit close();
-//}

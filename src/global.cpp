@@ -14,11 +14,13 @@ namespace app {
 					printf("Usage: %s [OPTIONS]\n"
 							"  -t <PATH>	target dir\n"
 						   "  -r <URL>	repository url\n"
+						   "  -k <KEY>	repository\n"
 							"\n", argv[0]);
 					ret = false;
 				}
 				if(QString(argv[i]) == "-t") app::conf.targetDir = QString(argv[++i]);
 				if(QString(argv[i]) == "-r") app::conf.repository = QString(argv[++i]);
+				if(QString(argv[i]) == "-k") app::conf.key = QString(argv[++i]);
 			}
 		}
 		return ret;

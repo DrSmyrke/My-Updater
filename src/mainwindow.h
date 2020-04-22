@@ -56,6 +56,8 @@ private:
 	QNetworkReply* m_pReply;
 	QByteArray m_buff;
 	QString m_applicationPath;
+	QString m_repoListFile;
+	QString m_repoURL;
 
 	void startDownload(const QUrl &url, const QString &fileName);
 	void decryptList();
