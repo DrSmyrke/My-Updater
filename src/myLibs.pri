@@ -5,9 +5,9 @@ win32 {
     NULL_DEVICE = /dev/null
 }
 
-    ERASE_COMMAND = rm {myfunctions.cpp, myfunctions.h, windows/proxysettings.cpp, windows/proxysettings.h, windows/proxysettings.ui}
+    ERASE_COMMAND = rm {myfunctions.cpp, myfunctions.h, proxysettings.cpp, proxysettings.h, proxysettings.ui}
 win32|win64{
-    ERASE_COMMAND = del myfunctions.cpp, myfunctions.h, windows/proxysettings.cpp, windows/proxysettings.h, windows/proxysettings.ui
+    ERASE_COMMAND = del myfunctions.cpp, myfunctions.h, proxysettings.cpp, proxysettings.h, proxysettings.ui
 }
 
 system($$ERASE_COMMAND 2> $$NULL_DEVICE)
