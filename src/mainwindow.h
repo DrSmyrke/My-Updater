@@ -8,7 +8,7 @@
 #include <QTimer>
 #include "global.h"
 #include "myfunctions.h"
-#include "windows/proxysettings.h"
+#include "proxysettings.h"
 
 namespace Ui {
 class MainWindow;

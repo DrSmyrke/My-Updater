@@ -42,17 +42,17 @@ SOURCES += \
         mainwindow.cpp \
     global.cpp \
     myfunctions.cpp \
-    windows/proxysettings.cpp
+    proxysettings.cpp
 
 HEADERS += \
         mainwindow.h \
     global.h \
     myfunctions.h \
-    windows/proxysettings.h
+    proxysettings.h
 
 FORMS += \
         mainwindow.ui \
-    windows/proxysettings.ui
+    proxysettings.ui
 
 TRANSLATIONS += \
     lang/ru_RU.ts

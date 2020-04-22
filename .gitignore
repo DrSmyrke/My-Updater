@@ -4,6 +4,6 @@ build-*
 *.pro.user
 myfunctions.cpp
 myfunctions.h
-src/windows/proxysettings.cpp
-src/windows/proxysettings.h
-src/windows/proxysettings.ui
+proxysettings.cpp
+proxysettings.h
+proxysettings.ui
