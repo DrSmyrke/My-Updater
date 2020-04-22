@@ -107,6 +107,7 @@ void MainWindow::slot_run()
 			downloadUpdates();
 		break;
 		case State::finished:
+			ui->logBox->insertPlainText( tr( "Finished!" ) + "\n" );
 			ui->progressBar->setValue( 100 );
 			if( m_pTimer->isActive() ){
 				m_pTimer->start();
@@ -230,7 +231,7 @@ void MainWindow::downloadUpdates()
 
 	m_updatingF = true;
 
-	drawProgress( m_downloadList.size() );
+	drawProgress( m_downloadList.size() - 1 );
 
 	auto data = m_downloadList.first();
 	m_downloadList.pop_front();
