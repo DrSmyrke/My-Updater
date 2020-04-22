@@ -49,7 +49,7 @@
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>&lt;b&gt;Repository:&lt;bl&gt;</string>
+       <string>&lt;b&gt;Repository:&lt;/b&gt;</string>
       </property>
      </widget>
     </item>
@@ -84,16 +84,6 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="4">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>&lt;a href=&quot;http://drsmyrke.ru&quot;&gt;Dr.Smyrke&lt;/a&gt;</string>
-      </property>
-      <property name="openExternalLinks">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="2">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -107,6 +97,27 @@
        <widget class="QPushButton" name="targetSB">
         <property name="text">
          <string>SELECT</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="4">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="proxyEB">
+        <property name="text">
+         <string>Proxy</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>&lt;a href=&quot;http://drsmyrke.ru&quot;&gt;Dr.Smyrke&lt;/a&gt;</string>
+        </property>
+        <property name="openExternalLinks">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

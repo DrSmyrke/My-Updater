@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	m_pTimer = new QTimer();
 	m_pManager = new QNetworkAccessManager( this );
+	m_pPorxySettingsWindow = new ProxySettings( this );
 
 	this->setWindowTitle( "My Updater v" + app::conf.version );
 	this->setWindowIcon( QIcon( "://index.ico" ) );
@@ -28,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	connect( m_pTimer, &QTimer::timeout, this, &MainWindow::slot_run );
 	connect( ui->targetSB, &QPushButton::clicked, this, &MainWindow::slot_selectTarget );
 	connect( ui->targetBox, &QLineEdit::returnPressed, this, &MainWindow::slot_selectTarget );
+	connect( ui->proxyEB, &QPushButton::clicked, m_pPorxySettingsWindow, &ProxySettings::exec );
 
 	m_pTimer->setInterval( 500 );
 	m_state = State::downloadList;

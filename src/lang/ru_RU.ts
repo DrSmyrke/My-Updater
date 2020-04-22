@@ -2,22 +2,11 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
-    <name>ConsoleWidget</name>
-    <message>
-        <source>terminal</source>
-        <translation type="vanished">терминал</translation>
-    </message>
-    <message>
-        <source>console</source>
-        <translation type="vanished">консоль</translation>
-    </message>
-</context>
-<context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="21"/>
@@ -30,28 +19,9 @@
         <translation>ОБНОВИТЬ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="97"/>
-        <source>Key</source>
-        <translation>Ключ</translation>
-    </message>
-    <message>
-        <source>targetPath</source>
-        <translation type="obsolete">Целевой путь</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="52"/>
-        <source>&lt;b&gt;Repository:&lt;bl&gt;</source>
-        <translation>&lt;b&gt;Репозиторий:&lt;bl&gt;</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="87"/>
-        <source>Address</source>
-        <translation>Адрес</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="73"/>
-        <source>SELECT</source>
-        <translation>ВЫБРАТЬ</translation>
+        <source>&lt;b&gt;Repository:&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Репозиторий:&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="59"/>
@@ -59,95 +29,162 @@
         <translation>&lt;b&gt;Цель:&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>CLEAR</source>
-        <translation type="vanished">Очистить</translation>
+        <location filename="../mainwindow.ui" line="73"/>
+        <source>Address</source>
+        <translation>Адрес</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Speed:&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Скорость:&lt;/b&gt;</translation>
+        <location filename="../mainwindow.ui" line="83"/>
+        <source>Key</source>
+        <translation>Ключ</translation>
     </message>
     <message>
-        <source>MODE</source>
-        <translation type="vanished">РЕЖИМ</translation>
+        <location filename="../mainwindow.ui" line="92"/>
+        <location filename="../mainwindow.cpp" line="129"/>
+        <source>Target directory</source>
+        <translation>Каталог назначения</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Port:&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Порт:&lt;/b&gt;</translation>
+        <location filename="../mainwindow.ui" line="99"/>
+        <source>SELECT</source>
+        <translation>ВЫБРАТЬ</translation>
     </message>
     <message>
-        <source>OPEN</source>
-        <translation type="vanished">ОТКРЫТЬ</translation>
+        <location filename="../mainwindow.ui" line="110"/>
+        <source>Proxy</source>
+        <translation>Прокси</translation>
     </message>
     <message>
-        <source>CLOSE</source>
-        <translation type="vanished">ЗАКРЫТЬ</translation>
+        <location filename="../mainwindow.ui" line="117"/>
+        <source>&lt;a href=&quot;http://drsmyrke.ru&quot;&gt;Dr.Smyrke&lt;/a&gt;</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Mode: %1</source>
-        <translation type="vanished">Режим: %1</translation>
-    </message>
-    <message>
-        <source>Console</source>
-        <translation type="vanished">Консоль</translation>
-    </message>
-    <message>
-        <source>Terminal</source>
-        <translation type="vanished">Терминал</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="91"/>
+        <location filename="../mainwindow.cpp" line="89"/>
         <source>Updating information from </source>
         <translation>Обновление информации из </translation>
     </message>
     <message>
-        <source>Decrypting information...
-</source>
-        <translation type="obsolete">Расшифровка информации...\n</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="98"/>
+        <location filename="../mainwindow.cpp" line="96"/>
         <source>Decrypting information...</source>
         <translation>Расшифровка информации...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="103"/>
+        <location filename="../mainwindow.cpp" line="101"/>
         <source>Checking filesystem...</source>
         <translation>Проверка файловой системы...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="108"/>
+        <location filename="../mainwindow.cpp" line="106"/>
         <source>Download updates...</source>
         <translation>Загрузка обновлений...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="80"/>
-        <location filename="../mainwindow.cpp" line="127"/>
-        <source>Target directory</source>
-        <translation>Целевой каталог</translation>
+        <location filename="../mainwindow.cpp" line="110"/>
+        <source>Finished!</source>
+        <translation>Завершено!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="183"/>
+        <location filename="../mainwindow.cpp" line="187"/>
         <source>Checking files [%1/%2] ...</source>
         <translation>Проверка файлов [%1/%2] ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="264"/>
-        <source>Target dir not found</source>
-        <translation>Целевой каталог не найден</translation>
-    </message>
-    <message>
-        <source>Open Target Directory</source>
-        <translation type="obsolete">Открыть каталог назначения</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="238"/>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>   Files left: %1      </source>
         <translation>   Файлов осталось: %1      </translation>
     </message>
     <message>
-        <source>Target dir not found
-</source>
-        <translation type="obsolete">Каталог назнечения не найден</translation>
+        <location filename="../mainwindow.cpp" line="269"/>
+        <source>Target dir not found</source>
+        <translation>Каталог назначения не найден</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <source>Repository address invalid
+ Example: [http://example.com/repo repoName]</source>
+        <translation>Адрес репозиторий указан неверно
+ Пример: [http://example.com/repo repoName]</translation>
+    </message>
+</context>
+<context>
+    <name>ProxySettings</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="vanished">Настройки прокси</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="44"/>
+        <location filename="../windows/proxysettings.ui" line="119"/>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="27"/>
+        <location filename="../windows/proxysettings.ui" line="34"/>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="14"/>
+        <source>Proxy Settings</source>
+        <translation>Настройки прокси</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="20"/>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="64"/>
+        <location filename="../windows/proxysettings.ui" line="112"/>
+        <source>Username</source>
+        <translation>Имя пользователя</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="71"/>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="79"/>
+        <source>System Settings</source>
+        <translation>Системные настройки</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="84"/>
+        <source>Socks5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="89"/>
+        <source>No Proxy</source>
+        <translation>Без прокси</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="94"/>
+        <source>Http Proxy</source>
+        <translation>Http прокси</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="99"/>
+        <source>Http Caching Proxy</source>
+        <translation>Http кеширующий прокси</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="104"/>
+        <source>Ftp Caching Proxy</source>
+        <translation>Ftp кеширующий прокси</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="126"/>
+        <source>Apply</source>
+        <translation>Применить</translation>
+    </message>
+    <message>
+        <location filename="../windows/proxysettings.ui" line="133"/>
+        <source>Port</source>
+        <translation>Порт</translation>
     </message>
 </context>
 </TS>

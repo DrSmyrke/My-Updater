@@ -5,9 +5,9 @@ win32 {
     NULL_DEVICE = /dev/null
 }
 
-    ERASE_COMMAND = rm {myfunctions.cpp, myfunctions.h}
+    ERASE_COMMAND = rm {myfunctions.cpp, myfunctions.h, windows/proxysettings.cpp, windows/proxysettings.h, windows/proxysettings.ui}
 win32|win64{
-    ERASE_COMMAND = del myfunctions.cpp, myfunctions.h
+    ERASE_COMMAND = del myfunctions.cpp, myfunctions.h, windows/proxysettings.cpp, windows/proxysettings.h, windows/proxysettings.ui
 }
 
 system($$ERASE_COMMAND 2> $$NULL_DEVICE)
@@ -15,8 +15,14 @@ system($$ERASE_COMMAND 2> $$NULL_DEVICE)
 win32|win64{
     system(powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/myfunctions.cpp', 'myfunctions.cpp')")
     system(powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/myfunctions.h', 'myfunctions.h')")
+    system(powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/UI/proxysettings.cpp', 'windows/proxysettings.cpp')")
+    system(powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/UI/proxysettings.h', 'windows/proxysettings.h')")
+    system(powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/UI/proxysettings.ui', 'windows/proxysettings.ui')")
 }else{
     system(curl https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/myfunctions.cpp > myfunctions.cpp)
     system(curl https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/myfunctions.h > myfunctions.h)
-#        system(curl --proxy-negotiate -u: https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/myfunctions.cpp > myfunctions.cpp)
+    system(curl https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/UI/proxysettings.cpp > windows/proxysettings.cpp)
+    system(curl https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/UI/proxysettings.h > windows/proxysettings.h)
+    system(curl https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/UI/proxysettings.ui > windows/proxysettings.ui)
+#   system(curl --proxy-negotiate -u: https://raw.githubusercontent.com/DrSmyrke/QT-Libs/master/myfunctions.cpp > myfunctions.cpp)
 }

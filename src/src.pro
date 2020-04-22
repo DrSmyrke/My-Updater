@@ -41,15 +41,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     global.cpp \
-    myfunctions.cpp
+    myfunctions.cpp \
+    windows/proxysettings.cpp
 
 HEADERS += \
         mainwindow.h \
     global.h \
-    myfunctions.h
+    myfunctions.h \
+    windows/proxysettings.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    windows/proxysettings.ui
 
 TRANSLATIONS += \
     lang/ru_RU.ts

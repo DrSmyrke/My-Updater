@@ -8,6 +8,7 @@
 #include <QTimer>
 #include "global.h"
 #include "myfunctions.h"
+#include "windows/proxysettings.h"
 
 namespace Ui {
 class MainWindow;
@@ -58,6 +59,7 @@ private:
 	QString m_applicationPath;
 	QString m_repoListFile;
 	QString m_repoURL;
+	ProxySettings* m_pPorxySettingsWindow;
 
 	void startDownload(const QUrl &url, const QString &fileName);
 	void decryptList();
