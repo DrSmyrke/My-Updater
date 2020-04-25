@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	QTranslator translator(&a);
 	if(translator.load(localeName,"://lang/")) a.installTranslator(&translator);
 
+	app::loadSettings();
 	if( !app::parsArgs(argc, argv) ) return 0;
 
 	MainWindow w;

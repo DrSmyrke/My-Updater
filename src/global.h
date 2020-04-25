@@ -15,6 +15,8 @@ namespace app {
 
 	bool parsArgs(int argc, char *argv[]);
 	void setLog(const uint8_t logLevel, const QString &mess);
+	void loadSettings();
+	void saveSettings();
 }
 
 #endif // GLOBAL_H

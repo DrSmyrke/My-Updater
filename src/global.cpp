@@ -33,4 +33,23 @@ namespace app {
 		return;
 	}
 
+	void loadSettings()
+	{
+		QSettings settings( "MySoft", "MyUpdater" );
+
+		app::conf.repository = settings.value("MAIN/repository", app::conf.repository).toString();
+		app::conf.targetDir = settings.value("MAIN/targetDir", app::conf.targetDir).toString();
+		app::conf.key = settings.value("MAIN/key", app::conf.key).toString();
+	}
+
+	void saveSettings()
+	{
+		QSettings settings( "MySoft", "MyUpdater" );
+				settings.clear();
+
+		settings.setValue("MAIN/repository", app::conf.repository);
+		settings.setValue("MAIN/targetDir", app::conf.targetDir);
+		settings.setValue("MAIN/key", app::conf.key);
+	}
+
 }

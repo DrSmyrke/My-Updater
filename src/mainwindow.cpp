@@ -44,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
 	delete ui;
+	app::saveSettings();
 }
 
 void MainWindow::slot_downloadProgress(const qint64 bytesReceived, const qint64 bytesTotal)
