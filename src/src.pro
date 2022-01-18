@@ -16,7 +16,12 @@ TARGET = src
 TEMPLATE = app
 
 CONFIG(debug, debug|release):CONFIGURATION=debug
-CONFIG(release, debug|release):CONFIGURATION=release
+
+CONFIG(release, debug|release){
+    CONFIGURATION=release
+    #from static build
+    QMAKE_LFLAGS_RELEASE += -static -static-libgcc
+}
 
 build_pass:CONFIG(debug, debug|release) {
     TARGET = $$join(TARGET,,,_debug)
@@ -31,34 +36,33 @@ DESTDIR             = ../bin
 CONFIG += c++11
 QMAKE_CXXFLAGS += "-std=c++11"
 
-win32|win64{
-    RC_FILE=  index.rc
-    OTHER_FILES+= index.rc
-    DISTFILES += index.rc
-}
-
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    global.cpp \
-    myfunctions.cpp \
-    proxysettings.cpp
+    global.cpp
 
 HEADERS += \
         mainwindow.h \
-    global.h \
-    myfunctions.h \
-    proxysettings.h
+    global.h
 
 FORMS += \
-        mainwindow.ui \
-    proxysettings.ui
+        mainwindow.ui
 
 TRANSLATIONS += \
     lang/ru_RU.ts
 
-exists(./gitversion.pri):include(./gitversion.pri)
-exists(./myLibs.pri):include(./myLibs.pri)
 
 RESOURCES += \
     resources.qrc
+    
+
+
+exists(./gitversion.pri):include(./gitversion.pri)
+exists(./myLibs.pri):include(./myLibs.pri)
+exists(index.rc){
+    win32|win64{
+        RC_FILE=  index.rc
+        OTHER_FILES+= index.rc
+        DISTFILES += index.rc
+    }
+}
